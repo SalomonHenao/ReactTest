@@ -1,3 +1,4 @@
+// Create table retrieving handlers from main app
 const Table = ({
     books = [],
     filters = {},
@@ -9,9 +10,11 @@ const Table = ({
     return (
         <table className="table">
             <thead>
+                {/* Table headers */}
                 <tr>
                     <th className="tableHeader">
                         Title<br />
+                        {/* Filter text-box */}
                         <input
                             type="text"
                             name="title"
@@ -76,8 +79,10 @@ const Table = ({
                 </tr>
             </thead>
             <tbody>
+                {/* Table rows */}
                 {books.map((book) => (
                     <tr key={book.id}>
+                        {/* Plain data values */}
                         <td className="tableCell">{book.title}</td>
                         <td className="tableCell">{book.description}</td>
                         <td className="tableCell">{book.author}</td>
@@ -89,6 +94,7 @@ const Table = ({
                                 <button className="button" onClick={() => handleQuantityChange(book, 1)}>+</button>
                             </div>
                         </td>
+                        {/* Action buttons */}
                         <td className="tableCell">
                             <button className="button deleteButton actionButton" onClick={() => handleDelete(book.id)}>Delete</button>
                             <button className="button actionButton" onClick={() => handleEdit(book)}>Edit</button>

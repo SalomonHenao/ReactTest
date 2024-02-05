@@ -9,6 +9,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
         quantity: book?.quantity || '',
     });
 
+    // Handles changes from form inputs
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData((prevData) => ({
@@ -17,6 +18,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
         }));
     };
 
+    // Handles submit for both create/update Books
     const handleSubmit = (e) => {
         e.preventDefault();
         onSubmit(formData);
@@ -24,7 +26,9 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
 
     return (
         <form className="form" onSubmit={handleSubmit}>
+            {/* Header */}
             <h1 className="form-header">{book ? 'Edit Book' : 'Add New Book'}</h1>
+            {/* Form text inputs */}
             <label htmlFor="title" className="formLabel">Title</label>
             <input
                 id="title"
@@ -58,6 +62,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
                 placeholder="Author"
                 className="formField"
             />
+            {/* Form number inputs */}
             <label htmlFor="price" className="formLabel">Price</label>
             <input
                 id="price"
@@ -82,6 +87,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
                 onChange={handleChange}
                 className="formField"
             />
+            {/* Action buttons */}
             <button type="submit" className="formButton formSaveButton">Save</button>
             <button type="button" onClick={onCancel} className="formButton formCancelButton">Cancel</button>
         </form>

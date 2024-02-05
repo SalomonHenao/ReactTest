@@ -4,6 +4,7 @@ import { getBooksFromApi, newBookToApi, putBookToApi, deleteBookFromApi } from '
 import BookForm from './components/Popup.js';
 import Table from './components/Table.js';
 
+// Initiate main app
 const App = () => {
   const [books, setBooks] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
@@ -16,25 +17,30 @@ const App = () => {
     quantity: ''
   });
 
+  // Fetch Books considering filters
   useEffect(() => {
     fetchBooks();
   }, [filters]);
 
+  // Fetch Books considering filters
   const fetchBooks = async () => {
     const response = await getBooksFromApi(filters);
     setBooks(response.data.data);
   };
 
+  // Delete a book based in the id
   const handleDelete = async (id) => {
     await deleteBookFromApi(id);
     fetchBooks();
   };
 
+  // Edit a book based in the id
   const handleEdit = (book) => {
     setEditBook(book);
     setShowPopup(true);
   };
 
+  // Handles form submit for both create and update
   const handleFormSubmit = async (bookData) => {
     if (editBook) {
       await putBookToApi(editBook.id, bookData)
@@ -46,6 +52,7 @@ const App = () => {
     setEditBook(null);
   };
 
+  // Handle changes from + and - quantity buttons
   const handleQuantityChange = async (book, delta) => {
     const updatedQuantity = parseInt(book.quantity) + delta;
     if (updatedQuantity < 0) return;
@@ -55,20 +62,24 @@ const App = () => {
     fetchBooks();
   };
 
+  // Handles filter changes to trigger retrieval
   const handleFilterChange = (e) => {
     const { name, value } = e.target;
     setFilters(prevFilters => ({ ...prevFilters, [name]: value }));
   };
 
   return (
+    // Main header
     <div className="container">
       <div className="headerContainer">
         <h1 className="header">Books Inventory</h1>
+        {/* New order button */}
         <button className="addButton" onClick={() => setShowPopup(true)}>Add New Book</button>
       </div>
       {showPopup && (
         <>
           <div className="overlay"></div>
+          {/* Form component to create/update books */}
           <BookForm
             book={editBook}
             onSubmit={handleFormSubmit}
@@ -76,6 +87,7 @@ const App = () => {
           />
         </>
       )}
+      {/* Table component to show and interact with books */}
       <Table
         books={books}
         filters={filters}
@@ -85,6 +97,7 @@ const App = () => {
         handleDelete={handleDelete}
       >
       </Table>
+      {/* No data label */}
       {!Boolean(books.length) && (
         <h2 className="noData">No data found</h2>
       )}
