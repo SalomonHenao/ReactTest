@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { getBooksFromApi, newBookToApi, putBookToApi, deleteBookFromApi } from './utils/Client.js';
 import BookForm from './components/Popup.js';
 import Table from './components/Table.js';
@@ -18,15 +18,15 @@ const App = () => {
   });
 
   // Fetch Books considering filters
-  useEffect(() => {
-    fetchBooks();
+  const fetchBooks = useCallback(async () => {
+    const response = await getBooksFromApi(filters);
+    setBooks(response.data.data);
   }, [filters]);
 
   // Fetch Books considering filters
-  const fetchBooks = async () => {
-    const response = await getBooksFromApi(filters);
-    setBooks(response.data.data);
-  };
+  useEffect(() => {
+    fetchBooks();
+  }, [fetchBooks]);
 
   // Delete a book based in the id
   const handleDelete = async (id) => {

@@ -2,6 +2,8 @@
 
 A React application designed to manage a books inventory. This project allows users to view, filter, add, edit, and delete books through a user-friendly interface. It interacts with a backend API to perform CRUD operations.
 
+![image](https://github.com/SalomonHenao/ReactTest/assets/39999385/da4f5dba-326b-4349-8df8-4b7e40ca49b2)
+
 ## Features
 
 - **View Books**: List all books with details including title, description, author, price, and quantity.
