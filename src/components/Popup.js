@@ -6,7 +6,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
         description: book?.description || '',
         author: book?.author || '',
         price: book?.price || '',
-        quantity: book?.quantity || '',
+        quantity: book?.quantity !== undefined ? book.quantity : '',
     });
 
     // Handles changes from form inputs
@@ -81,7 +81,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
                 name="quantity"
                 type="number"
                 step="1"
-                min="1"
+                min="0"
                 placeholder="1"
                 value={formData.quantity}
                 onChange={handleChange}
