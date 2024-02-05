@@ -21,7 +21,9 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
     // Handles submit for both create/update Books
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSubmit(formData);
+        if (formData.title && formData.description && formData.author && formData.price && (parseInt(formData.quantity) >= 0)) {
+            onSubmit(formData);
+        }
     };
 
     return (
@@ -70,7 +72,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
                 type="number"
                 step="0.01"
                 min="0.01"
-                placeholder="$12.34"
+                placeholder="Give it a price"
                 value={formData.price}
                 onChange={handleChange}
                 className="formField"
@@ -82,7 +84,7 @@ const BookForm = ({ book, onSubmit, onCancel }) => {
                 type="number"
                 step="1"
                 min="0"
-                placeholder="1"
+                placeholder="Amount in stock"
                 value={formData.quantity}
                 onChange={handleChange}
                 className="formField"
