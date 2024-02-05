@@ -83,7 +83,7 @@ const App = () => {
           <BookForm
             book={editBook}
             onSubmit={handleFormSubmit}
-            onCancel={() => setShowPopup(false)}
+            onCancel={() => { setEditBook(null); setShowPopup(false) }}
           />
         </>
       )}
