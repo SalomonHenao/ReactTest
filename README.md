@@ -1,70 +1,43 @@
-# Getting Started with Create React App
+# Books Inventory Management
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A React application designed to manage a books inventory. This project allows users to view, filter, add, edit, and delete books through a user-friendly interface. It interacts with a backend API to perform CRUD operations.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **View Books**: List all books with details including title, description, author, price, and quantity.
+- **Add New Book**: Utilize a popup form to input details of a new book and add it to the inventory.
+- **Edit Book**: Select a book from the inventory to edit its details in the popup form.
+- **Delete Book**: Remove a book from the inventory.
+- **Filter Books**: Apply filters based on book attributes like title, description, author, price, and quantity.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Prerequisites
 
-### `npm test`
+- Node.js and npm (Node Package Manager)
+- A running backend API server that this frontend interacts with
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Installing
 
-### `npm run build`
+1. **Clone the Repository**
+```
+git clone https://github.com/SalomonHenao/ReactTest.git
+cd books-inventory-management
+```
+2. **Install Dependencies**
+```npm install```
+3. **Configure API Endpoint**
+Make sure to configure the API endpoint in `./utils/Client.js` to match your backend API server.
+4. **Run the Application**
+```npm start```
+This command runs the app in development mode. Open `http://localhost:3000` to view it in the browser.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Using the Application
+View Books: Simply open the application to see the list of books.
+Add a Book: Click the "Add New Book" button and fill in the book details in the popup form.
+Edit/Delete a Book: Use the "Edit" or "Delete" buttons next to each book entry in the list.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Contributing
+Contributions are welcome! Please feel free to submit a pull request or create an issue for bug reports, features, or improvements.
