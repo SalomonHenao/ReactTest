@@ -1,4 +1,4 @@
-# Books Inventory Management
+# Books Inventory Management - Frontend
 
 A React application designed to manage a books inventory. This project allows users to view, filter, add, edit, and delete books through a user-friendly interface. It interacts with a backend API to perform CRUD operations.
 
@@ -24,7 +24,7 @@ These instructions will get your copy of the project up and running on your loca
 1. **Clone the Repository**
 ```
 git clone https://github.com/SalomonHenao/ReactTest.git
-cd books-inventory-management
+cd ReactTest
 ```
 2. **Install Dependencies**
 ```npm install```
